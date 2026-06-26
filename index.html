@@ -41,17 +41,23 @@
             height: 100%;
         }
 
+        /*#game-container
+        {
+            width: 50%;
+            height: 40%;
+        }*/
+
         .game {
             position: absolute;
-            bottom: 0%; /* Sticks it to the bottom edge */
-            left: 50%; /* Moves its left edge to the middle of the parent */
-            transform: translateX(-50%); /* Pulls it back by half its own width */
-            background-color: #FFFFFF; /* Optional: Adds a color to the empty side bars */
+            bottom: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #FFFFFF;
             padding: 0;
             margin: 0;
             border: none;
-            width: 650px;
-            height: 403px;
+            width: 50%; /*650px;*/
+            aspect-ratio: 16/9;
         }
         .background-container {
             background-image: url('images/kylelyn.png');
