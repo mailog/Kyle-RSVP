@@ -5,109 +5,159 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kyle & Lyn RSVP</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        @font-face {
+            font-family: 'GreatVibes';
+            src: url('fonts/GreatVibes-Regular.ttf') format('truetype');
+        }
+        @media (orientation: landscape) {
+            body {
+                overflow: hidden; /* Prevents unwanted scrollbars */
+            }
+
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+
+
+            .game {
+                position: absolute;
+                bottom: 0%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #FFFFFF;
+                padding: 0;
+                margin: 0;
+                margin-left: 20%;
+                margin-bottom: 1%;
+                border: none;
+                width: 50%;
+                aspect-ratio: 16/9;
+                z-index:-1;
+            }
+
+            .background-container {
+                position: absolute;
+                top: 5%;
+                background-image: url('images/kylelyn.png');
+                background-position: left center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 100vh;
+                margin: 0;
+                margin-left: 5%;
+                z-index: -1;
+            }
+
+            #invitedtext {
+                font-family: 'GreatVibes', 'Brush Script MT';
+                top: 10%;
+                text-align: left;
+                width: 50%;
+                margin-inline: auto;
+                font-size: 6vh;
+                font-weight: bold;
+                margin-bottom: 0%;
+                margin-top: 0.5%;
+                margin-left: 17.5%;
+            }
+
+            #rsvp-details {
+                position: absolute;
+                width: 50vw;
+                margin: 0 auto;
+                margin-top: -20vh;
+                margin-left: 75%;
+                z-index: 100;
+            }
+
+            #weddingdetails
+            {
+                margin-top: -1%;
+                width: 25%;
+                margin-left: 45%;
+                font-size: 24px;
+            }
         }
 
-        /*header {
-            background: #0078d7;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
+        @media (orientation: portrait) {
+            body {
+                font-family: 'GreatVibes';
+                overflow: hidden; /* Prevents unwanted scrollbars */
+            }
 
-        main {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
 
-        .card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+            .game {
+                position: absolute;
+                bottom: 0%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #FFFFFF;
+                padding: 0;
+                margin: 0;
+                border: none;
+                width: 90%;
+                aspect-ratio: 16/9;
+                z-index: -1;
+            }
 
-        footer {
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-            color: #666;
-        }*/
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
+            .background-container {
+                position: absolute;
+                top: 5%;
+                background-image: url('images/kylelyn.png');
+                background-position: center center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 70vh;
+                margin: 0;
+                z-index: -1;
+            }
 
-        /*#game-container
-        {
-            width: 50%;
-            height: 40%;
-        }*/
+            #invitedtext {
+                top: 10%;
+                text-align: center;
+                width: 50%;
+                margin-inline: auto;
+                font-size: 4vh;
+                margin-bottom: 0%;
+                margin-top: 0.5%;
+            }
 
-        .game {
-            position: absolute;
-            bottom: 0%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #FFFFFF;
-            padding: 0;
-            margin: 0;
-            border: none;
-            width: 50%; /*650px;*/
-            aspect-ratio: 16/9;
-        }
-        .background-container {
-            background-image: url('images/kylelyn.png');
-            background-position: center center;
-            background-size: contain; /* Forces the entire image to fit inside the screen */
-            background-repeat: no-repeat;
-            width: 100%;
-            height: 70vh;
-            margin:0;
-            background-color: #FFFFFF; /* Optional: Adds a color to the empty side bars */
-        }
-
-        #invitedtext {
-            top: 10%;
-            text-align: center;
-            width: 50%; /* Or a fixed width like 300px */
-            margin-inline: auto;
-            font-family: 'Lucida Bright';
-            font-size: 4vh;
-            margin-bottom: 0%;
-            margin-top: 0.5%;
-        }
-
-        #rsvp-details
-        {
-            position: absolute;
-            left: 75%;
-            width: 25%;
-            top: 5%;
-            margin: 0 auto;
+            #rsvp-details {
+                width: 50vw;
+                margin: 0 auto;
+                margin-left: 1%;
+                z-index: 100;
+            }
         }
     </style>
 </head>
 <body>
-    <p id="invitedtext">YOU'RE INVITED!</p>
     <div class="background-container">
     </div>
+    <p id="invitedtext">Kyle & Lyn</p>
+    <p id="weddingdetails">We kindly invite you to our wedding. Here are the details . . . Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p><form id="rsvp-details">
+        <p> Kindly Respond </p>
+        <label>Name</label><br>
+        <input type="text" name="name"><br>
+        <label>Number of Guests</label><br>
+        <input type="text" name="guests"><br>
+        <label>Email</label><br>
+        <input type="text" name="email"><br><br>
+        <button type="submit">Submit</button>
+        <p id="responseMessage">-</p>
+    </form>
     <iframe class="game"
             src="game/index.html">
     </iframe>
-
-    <form id="rsvp-details">
-        <p> Details: </p>
-        <label>First name:</label><br>
-        <input type="text" name="firstname"><br>
-        <label>Last name:</label><br>
-        <input type="text" name="lastname"><br><br>
-        <button type="submit">Submit Data</button>
-        <p id="responseMessage">-</p>
-    </form>
 
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxEm31yzUd-to70GD4k910NY1RyoyefP7Re9xXRLu_EHTzDIvRgEWI9UklnD67SogKIlg/exec';
@@ -120,11 +170,11 @@
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                 .then(response => {
-                    responseMessage.innerHTML = "Data successfully sent to Google Sheets!";
+                    responseMessage.innerHTML = "Info received!";
                     form.reset();
                 })
                 .catch(error => {
-                    responseMessage.innerHTML = "An error occurred. Please try again.";
+                    responseMessage.innerHTML = "An error occurred. Please try again or contact us directly.";
                     console.error('Error!', error.message);
                 });
         });
